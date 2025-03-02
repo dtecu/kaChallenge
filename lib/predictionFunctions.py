@@ -1,3 +1,5 @@
+import torch
+
 def predict(clasifier, tokens, categories):
     with torch.no_grad():
         outputs = clasifier(**tokens)
