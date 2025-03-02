@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "category": "Troubleshooting",
+      "question": 0
+    },
+    {
+      "category": "Discovery",
+      "question": 1
+    },
+    {
+      "category": "Discovery",
+      "question": 2
+    },
+    {
+      "category": "Off-topic",
+      "question": 3
+    },
+    {
+      "category": "Discovery",
+      "question": 4
+    },
+    {
+      "category": "Troubleshooting",
+      "question": 5
+    },
+    {
+      "category": "Comparison",
+      "question": 6
+    },
+    {
+      "category": "Discovery",
+      "question": 7
+    },
+    {
+      "category": "Off-topic",
+      "question": 8
+    },
+    {
+      "category": "Discovery",
+      "question": 9
+    },
+    {
+      "category": "Discovery",
+      "question": 10
+    },
+    {
+      "category": "Comparison",
+      "question": 11
+    }
+  ]
+}
