@@ -1,4 +1,4 @@
-import lib.datasetFunctions
+import lib.datasetFunctions as datasetFunctions
 
 class BalancedDatasetExtractor:
     def __init__(self, labelsToData, datasetsNumber):

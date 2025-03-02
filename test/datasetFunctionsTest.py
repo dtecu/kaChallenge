@@ -1,5 +1,5 @@
 import random
-import lib.datasetFunctions
+import lib.datasetFunctions as datasetFunctions
 
 categories = ['Discovery', 'Troubleshooting', 'Comparison', 'Off-topic']
 categoriesDict = {label:i for i, label in enumerate(categories)}
