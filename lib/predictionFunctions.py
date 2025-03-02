@@ -1,4 +1,5 @@
 import torch
+import torch.nn.functional as F
 
 def predict(clasifier, tokens, categories):
     with torch.no_grad():
