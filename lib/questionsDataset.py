@@ -1,3 +1,5 @@
+import torch
+
 class QuestionsDataset(torch.utils.data.Dataset):
     def __init__(self, tokens, labels):
         self.tokens = tokens
