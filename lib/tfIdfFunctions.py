@@ -22,3 +22,10 @@ def concatenateDocsInSameCategory(labelsToData):
 def getListOfCategories(docsInSameCategory, categories):
     # make sure we keep the order in categories
     return [docsInSameCategory[category] for category in categories]
+
+def getListOfDocsForLabel(labelsToData):
+    result = dict()
+    for label, data in labelsToData.items():
+        result[label] = [item['question'] for item in data]
+    return result
+
