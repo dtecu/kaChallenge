@@ -4,7 +4,7 @@ from transformers import Trainer
 
 class BalancedOversampledTrainer(Trainer):
     def __init__(self, y, **kwargs):
-        super().__init__(kwargs)
+        super().__init__(**kwargs)
         self.y = y
 
     def createBalancedOversampledDataLoader(self):
