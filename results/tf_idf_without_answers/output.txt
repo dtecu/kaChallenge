@@ -1,0 +1,18 @@
+Length of all data in data set: 1185
+Size of categories in the data set: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 7}
+There are 83 unlabelled items
+Figuring out why ...
+['Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic']
+OK the reason is the inconsistency: 'Off-Topic' vs 'Off-topic'
+Agreeing to turn all of 'Off-Topic' into 'Off-topic' and then check again that the data is clean
+Confirm that data is consistent
+Length of all data in data set: 1185
+Size of categories in the data set: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 90}
+Data is OK now
+Accuracy for Discovery : 0.7482993197278912
+Accuracy for Troubleshooting : 0.575
+Accuracy for Code : 0.5
+Accuracy for Comparison : 0.8
+Accuracy for Advice : 0.7272727272727273
+Accuracy for Off-topic : 0.3888888888888889
+Overall accuracy: 0.680672268907563
