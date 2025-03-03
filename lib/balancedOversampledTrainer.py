@@ -6,6 +6,7 @@ class BalancedOversampledTrainer(Trainer):
     def __init__(self, y, **kwargs):
         super().__init__(**kwargs)
         self.y = y
+        self.dataLoader = self.createBalancedOversampledDataLoader()
 
     def createBalancedOversampledDataLoader(self):
         categoryCounts = torch.bincount(self.y)
@@ -16,4 +17,4 @@ class BalancedOversampledTrainer(Trainer):
         return DataLoader(self.train_dataset, batch_size=8, sampler=sampler)
 
     def get_train_dataloader(self):
-        return custom_dataloader
+        return self.dataLoader
