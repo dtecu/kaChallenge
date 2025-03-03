@@ -24,7 +24,7 @@ def getMispredictedCategories(prediction, trueValue, categories):
     return [(w, g) for w, g in zip(wrong, groundTruth)]
 
 def getCategoryBasedAccuracy(prediction, trueValue, categories):
-    mispredistedCategories = getMispredictedCategories(predictions, trueValue, categories)
+    mispredistedCategories = getMispredictedCategories(prediction, trueValue, categories)
     countMispredictedCategories = dict(Counter([item for (_, item) in mispredistedCategories]))
     countTotalCategories = dict(Counter([categories[item] for item in trueValue.tolist()]))
     missingItems = {item:0 for item in set(countTotalCategories.keys()).difference(set(countMispredictedCategories.keys()))}
