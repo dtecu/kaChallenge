@@ -1,5 +1,6 @@
 import torch
 from torch.utils.data import Dataset, DataLoader
+from transformers import Trainer
 
 class BalancedOversampledTrainer(Trainer):
     def __init__(self, y, **kwargs):
