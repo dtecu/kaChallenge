@@ -19,6 +19,13 @@ def concatenateDocsInSameCategory(labelsToData):
         result[label] = ' '.join(docs)
     return result
 
+def concatenateDocsInSameCategoryWithAnswers(labelsToData):
+    result = dict()
+    for label, data in labelsToData.items():
+        docs = [item['question'] + ' ' + item['answer'] for item in data]
+        result[label] = ' '.join(docs)
+    return result
+
 def getListOfCategories(docsInSameCategory, categories):
     # make sure we keep the order in categories
     return [docsInSameCategory[category] for category in categories]
