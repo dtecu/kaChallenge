@@ -5,6 +5,7 @@ import torch.nn.functional as F
 
 from lib.questionsDataset import QuestionsDataset
 from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments, EarlyStoppingCallback
+from collections import Counter
 
 bertName = 'bert-base-uncased'
 tokenizer = BertTokenizer.from_pretrained(bertName)
@@ -74,3 +75,10 @@ torch.save(torch.tensor(yVal), "expected.pth")
 print('\nTrain results:', trainResults)
 print('\nTest results:', testResults)
 print('\nFinal, validation results:', evaluationResults.metrics)
+
+predictions = torch.argmax(predictedProbabilities, dim=-1)
+mispredistedCategories = predictionFunctions.getMispredictedCategories(predictions, torch.tensor(yVal), categories)
+print('\nMispredicted categories as tuples (predicted, expected) in validation set:', mispredistedCategories)
+categoryBasedAccuracy = predictionFunctions.getCategoryBasedAccuracy(predictions, torch.tensor(yVal), categories)
+print('\nCategory based accuracy in validation set:', categoryBasedAccuracy)
+print('\nCategories count in the validation set:', dict(Counter([categories[i] for i in yVal])))

@@ -29,3 +29,9 @@ Train results: {'eval_loss': 0.19453047215938568, 'eval_Accuracy': 0.94786235662
 Test results: {'eval_loss': 0.3323349058628082, 'eval_Accuracy': 0.9158878504672897, 'eval_F1Macro': 0.8415298469646296, 'eval_F1Micro': 0.9158878504672897, 'eval_F1Weighed': 0.9212633161231292, 'eval_runtime': 0.7158, 'eval_samples_per_second': 149.477, 'eval_steps_per_second': 19.558, 'epoch': 6.0}
 
 Final, validation results: {'test_loss': 0.5938358306884766, 'test_Accuracy': 0.8319327731092437, 'test_F1Macro': 0.7199697038063623, 'test_F1Micro': 0.8319327731092437, 'test_F1Weighed': 0.8324127562521447, 'test_runtime': 0.7809, 'test_samples_per_second': 152.383, 'test_steps_per_second': 19.208}
+
+Mispredicted categories as tuples (predicted, expected) in validation set: [('Troubleshooting', 'Discovery'), ('Discovery', 'Troubleshooting'), ('Off-topic', 'Discovery'), ('Troubleshooting', 'Code'), ('Advice', 'Discovery'), ('Discovery', 'Off-topic'), ('Advice', 'Discovery'), ('Troubleshooting', 'Discovery'), ('Off-topic', 'Discovery'), ('Advice', 'Discovery'), ('Troubleshooting', 'Discovery'), ('Troubleshooting', 'Off-topic'), ('Discovery', 'Advice'), ('Troubleshooting', 'Off-topic'), ('Discovery', 'Code'), ('Discovery', 'Troubleshooting'), ('Discovery', 'Off-topic'), ('Code', 'Off-topic'), ('Troubleshooting', 'Discovery'), ('Discovery', 'Troubleshooting')]
+
+Category based accuracy in validation set: {'Discovery': 0.875, 'Troubleshooting': 0.8235294117647058, 'Comparison': 1.0, 'Code': 0.33333333333333337, 'Advice': 0.75, 'Off-topic': 0.6153846153846154}
+
+Categories count in the validation set: {'Discovery': 72, 'Troubleshooting': 17, 'Comparison': 10, 'Code': 3, 'Advice': 4, 'Off-topic': 13}
