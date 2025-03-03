@@ -25,9 +25,9 @@ def getMispredictedCategories(prediction, trueValue, categories):
 def getMetrics(probsLabelsTuple):
     predictedProbabilities, expected = probsLabelsTuple
     predictions = predictedProbabilities.argmax(axis=-1)
-    accuracy = accuracy_score(expected.numpy(), predictions.numpy())
+    accuracy = accuracy_score(expected, predictions)
     # Due to the imbalace of classes, let's get also the F1 scores (micro, macro and weighted)
-    f1Macro = f1_score(expected.numpy(), predictions.numpy(), average='macro')
-    f1Micro = f1_score(expected.numpy(), predictions.numpy(), average='micro')
-    f1Weighed = f1_score(expected.numpy(), predictions.numpy(), average='weighted')
+    f1Macro = f1_score(expected, predictions, average='macro')
+    f1Micro = f1_score(expected, predictions, average='micro')
+    f1Weighed = f1_score(expected, predictions, average='weighted')
     return {"Accuracy":accuracy, "F1Macro":f1Macro, "F1Micro":f1Micro, "F1Weighed":f1Weighed}
