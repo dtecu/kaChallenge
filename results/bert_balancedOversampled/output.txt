@@ -1,0 +1,75 @@
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+tokenizer_config.json: 100%
+ 48.0/48.0 [00:00<00:00, 5.72kB/s]
+vocab.txt: 100%
+ 232k/232k [00:00<00:00, 1.07MB/s]
+tokenizer.json: 100%
+ 466k/466k [00:00<00:00, 1.12MB/s]
+config.json: 100%
+ 570/570 [00:00<00:00, 72.0kB/s]
+Length of all data in data set: 1185
+Size of categories in the data set: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 7}
+There are 83 unlabelled items
+Figuring out why ...
+['Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic']
+OK the reason is the inconsistency: 'Off-Topic' vs 'Off-topic'
+Agreeing to turn all of 'Off-Topic' into 'Off-topic' and then check again that the data is clean
+Confirm that data is consistent
+Length of all data in data set: 1185
+Size of categories in the data set: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 90}
+Data is OK now
+model.safetensors: 100%
+ 440M/440M [00:01<00:00, 203MB/s]
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Logging into wandb.ai. (Learn how to deploy a W&B server locally: https://wandb.me/wandb-server)
+wandb: You can find your API key in your browser here: https://wandb.ai/authorize
+wandb: Paste an API key from your profile and hit enter: ··········
+wandb: WARNING If you're specifying your api key in code, ensure this code is not shared publicly.
+wandb: WARNING Consider setting the WANDB_API_KEY environment variable, or running `wandb login` from the command line.
+wandb: No netrc file found, creating one.
+wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc
+wandb: Currently logged in as: dan-tecu (dan-tecu-eth) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+Tracking run with wandb version 0.19.7
+Run data is saved locally in /content/dantecu/wandb/run-20250303_134859-k1miuu3t
+Syncing run ./results to Weights & Biases (docs)
+View project at https://wandb.ai/dan-tecu-eth/huggingface
+View run at https://wandb.ai/dan-tecu-eth/huggingface/runs/k1miuu3t
+/content/dantecu/lib/questionsDataset.py:12: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  item = {key: torch.tensor(val[idx]) for key, val in self.tokens.items()}
+ [1560/3600 04:53 < 06:24, 5.31 it/s, Epoch 13/30]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.234436	0.542056	0.545607	0.542056	0.565672
+2	No log	1.172301	0.728972	0.618466	0.728972	0.763042
+3	No log	0.840672	0.831776	0.758026	0.831776	0.839844
+4	No log	0.931702	0.813084	0.699238	0.813084	0.824980
+5	0.417900	0.840779	0.859813	0.769380	0.859813	0.863940
+6	0.417900	0.867995	0.850467	0.762135	0.850467	0.850582
+7	0.417900	0.782640	0.869159	0.792293	0.869159	0.869140
+8	0.417900	1.051279	0.822430	0.704533	0.822430	0.834096
+9	0.056400	0.697953	0.897196	0.810393	0.897196	0.899435
+10	0.056400	0.774509	0.887850	0.763899	0.887850	0.887925
+11	0.056400	1.022600	0.859813	0.739927	0.859813	0.859211
+12	0.056400	1.015623	0.831776	0.672526	0.831776	0.836532
+13	0.023100	0.968992	0.803738	0.612346	0.803738	0.812721
+
+Train results: {'eval_loss': 0.1267842799425125, 'eval_Accuracy': 0.9791449426485923, 'eval_F1Macro': 0.970530000403552, 'eval_F1Micro': 0.9791449426485923, 'eval_F1Weighed': 0.9799616185730478, 'eval_runtime': 6.1732, 'eval_samples_per_second': 155.348, 'eval_steps_per_second': 19.439, 'epoch': 13.0}
+
+Test results: {'eval_loss': 0.6979532837867737, 'eval_Accuracy': 0.897196261682243, 'eval_F1Macro': 0.8103925583051451, 'eval_F1Micro': 0.897196261682243, 'eval_F1Weighed': 0.8994346823200818, 'eval_runtime': 0.699, 'eval_samples_per_second': 153.075, 'eval_steps_per_second': 20.029, 'epoch': 13.0}
+
+Final, validation results: {'test_loss': 1.2616097927093506, 'test_Accuracy': 0.8067226890756303, 'test_F1Macro': 0.7248372730387119, 'test_F1Micro': 0.8067226890756303, 'test_F1Weighed': 0.7979527542431841, 'test_runtime': 0.7732, 'test_samples_per_second': 153.909, 'test_steps_per_second': 19.4}
+
+Mispredicted categories as tuples (predicted, expected) in validation set: [('Advice', 'Code'), ('Discovery', 'Troubleshooting'), ('Discovery', 'Advice'), ('Discovery', 'Troubleshooting'), ('Discovery', 'Off-topic'), ('Code', 'Troubleshooting'), ('Troubleshooting', 'Discovery'), ('Discovery', 'Off-topic'), ('Discovery', 'Troubleshooting'), ('Discovery', 'Advice'), ('Troubleshooting', 'Discovery'), ('Discovery', 'Comparison'), ('Troubleshooting', 'Discovery'), ('Code', 'Troubleshooting'), ('Discovery', 'Troubleshooting'), ('Discovery', 'Troubleshooting'), ('Off-topic', 'Discovery'), ('Discovery', 'Off-topic'), ('Discovery', 'Off-topic'), ('Discovery', 'Off-topic'), ('Discovery', 'Code'), ('Troubleshooting', 'Discovery'), ('Troubleshooting', 'Off-topic')]
+
+Category based accuracy in validation set: {'Troubleshooting': 0.75, 'Off-topic': 0.4, 'Discovery': 0.9230769230769231, 'Code': 0.7142857142857143, 'Comparison': 0.8, 'Advice': 0.5}
+
+Categories count in the validation set: {'Troubleshooting': 28, 'Off-topic': 10, 'Discovery': 65, 'Code': 7, 'Comparison': 5, 'Advice': 4}
