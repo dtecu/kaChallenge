@@ -6,6 +6,6 @@
 import git
 import os 
 
-BASE_DIR = 'dtecu'
+BASE_DIR = 'dantecu'
 git.Repo.clone_from('https://github.com/dtecu/kaChallenge', BASE_DIR)
 os.chdir(BASE_DIR)

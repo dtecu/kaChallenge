@@ -1,6 +1,9 @@
 import torch
 import torch.nn.functional as F
 
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
+
 def predict(clasifier, tokens, categories):
     with torch.no_grad():
         outputs = clasifier(**tokens)
@@ -18,3 +21,13 @@ def getMispredictedCategories(prediction, trueValue, categories):
     wrong = [categories[i] for i in getMispredictedClasses(prediction, trueValue).tolist()]
     groundTruth = [categories[i] for i in getMispredictedClasses(trueValue, prediction).tolist()]
     return [(w, g) for w, g in zip(wrong, groundTruth)]
+
+def getMetrics(probsLabelsTuple):
+    predictedProbabilities, expected = probsLabelsTuple
+    predictions = predictedProbabilities.argmax(axis=-1)
+    accuracy = accuracy_score(expected.numpy(), predictions.numpy())
+    # Due to the imbalace of classes, let's get also the F1 scores (micro, macro and weighted)
+    f1Macro = f1_score(expected.numpy(), predictions.numpy(), average='macro')
+    f1Micro = f1_score(expected.numpy(), predictions.numpy(), average='micro')
+    f1Weighed = f1_score(expected.numpy(), predictions.numpy(), average='weighted')
+    return {"Accuracy":accuracy, "F1Macro":f1Macro, "F1Micro":f1Micro, "F1Weighed":f1Weighed}
