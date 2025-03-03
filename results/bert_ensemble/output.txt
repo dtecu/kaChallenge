@@ -1,0 +1,300 @@
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+tokenizer_config.json: 100%
+ 48.0/48.0 [00:00<00:00, 5.15kB/s]
+vocab.txt: 100%
+ 232k/232k [00:00<00:00, 5.11MB/s]
+tokenizer.json: 100%
+ 466k/466k [00:00<00:00, 25.1MB/s]
+config.json: 100%
+ 570/570 [00:00<00:00, 65.2kB/s]
+Length of all data in data set: 1185
+Size of categories in the data set: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 7}
+There are 83 unlabelled items
+Figuring out why ...
+['Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic']
+OK the reason is the inconsistency: 'Off-Topic' vs 'Off-topic'
+Agreeing to turn all of 'Off-Topic' into 'Off-topic' and then check again that the data is clean
+Confirm that data is consistent
+Length of all data in data set: 1185
+Size of categories in the data set: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 90}
+Data is OK now
+
+All data: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 90}
+Train (and test) data: {'Discovery': 660, 'Troubleshooting': 179, 'Code': 53, 'Comparison': 45, 'Advice': 47, 'Off-topic': 81}
+Final validation data: {'Discovery': 74, 'Troubleshooting': 20, 'Code': 6, 'Comparison': 5, 'Advice': 6, 'Off-topic': 9}
+
+expected validation labels:  [4, 0, 3, 0, 0, 4, 0, 5, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 2, 0, 1, 4, 0, 0, 0, 1, 5, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 5, 2, 0, 0, 4, 4, 0, 5, 3, 3, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 1, 0, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 5, 5, 3, 0, 1, 1, 3, 0, 0, 5, 0, 5, 1, 1, 0, 0, 0, 1, 0, 1, 1]
+model.safetensors: 100%
+ 440M/440M [00:01<00:00, 246MB/s]
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: WARNING If you're specifying your api key in code, ensure this code is not shared publicly.
+wandb: WARNING Consider setting the WANDB_API_KEY environment variable, or running `wandb login` from the command line.
+wandb: No netrc file found, creating one.
+wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc
+wandb: Currently logged in as: dan-tecu (dan-tecu-eth) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+Tracking run with wandb version 0.19.7
+Run data is saved locally in /content/dantecu/wandb/run-20250303_141131-n960twnt
+Syncing run ./results to Weights & Biases (docs)
+View project at https://wandb.ai/dan-tecu-eth/huggingface
+View run at https://wandb.ai/dan-tecu-eth/huggingface/runs/n960twnt
+ [210/600 00:52 < 01:38, 3.94 it/s, Epoch 7/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.398797	0.666667	0.614809	0.666667	0.614809
+2	No log	0.681515	0.833333	0.818140	0.833333	0.818140
+3	No log	0.412738	0.866667	0.865320	0.866667	0.865320
+4	No log	0.483258	0.833333	0.816850	0.833333	0.816850
+5	No log	0.582424	0.866667	0.841270	0.866667	0.841270
+6	No log	0.570066	0.833333	0.834046	0.833333	0.834046
+7	No log	1.382257	0.766667	0.718981	0.766667	0.718981
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [300/600 01:16 < 01:17, 3.89 it/s, Epoch 10/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.381415	0.433333	0.380952	0.433333	0.380952
+2	No log	0.850654	0.766667	0.743844	0.766667	0.743844
+3	No log	0.513470	0.833333	0.829293	0.833333	0.829293
+4	No log	0.581768	0.833333	0.819444	0.833333	0.819444
+5	No log	0.593138	0.833333	0.826515	0.833333	0.826515
+6	No log	0.397086	0.900000	0.896886	0.900000	0.896886
+7	No log	0.609273	0.866667	0.859848	0.866667	0.859848
+8	No log	0.538156	0.866667	0.862626	0.866667	0.862626
+9	No log	0.606550	0.900000	0.899663	0.900000	0.899663
+10	No log	0.666774	0.866667	0.862290	0.866667	0.862290
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [210/600 00:54 < 01:41, 3.84 it/s, Epoch 7/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.364227	0.600000	0.581349	0.600000	0.581349
+2	No log	1.006146	0.700000	0.686869	0.700000	0.686869
+3	No log	0.825136	0.766667	0.763588	0.766667	0.763588
+4	No log	0.967473	0.766667	0.754630	0.766667	0.754630
+5	No log	1.024364	0.800000	0.790404	0.800000	0.790404
+6	No log	1.034057	0.800000	0.790404	0.800000	0.790404
+7	No log	1.025175	0.800000	0.789478	0.800000	0.789478
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [180/600 00:47 < 01:52, 3.73 it/s, Epoch 6/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.214675	0.566667	0.532563	0.566667	0.532563
+2	No log	0.737772	0.766667	0.749958	0.766667	0.749958
+3	No log	0.814269	0.700000	0.656085	0.700000	0.656085
+4	No log	0.994517	0.766667	0.743963	0.766667	0.743963
+5	No log	0.873907	0.766667	0.766414	0.766667	0.766414
+6	No log	1.128330	0.733333	0.711640	0.733333	0.711640
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [270/600 01:08 < 01:24, 3.90 it/s, Epoch 9/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.299943	0.433333	0.327206	0.433333	0.327206
+2	No log	0.830313	0.733333	0.711497	0.733333	0.711497
+3	No log	0.876825	0.700000	0.669872	0.700000	0.669872
+4	No log	0.968087	0.666667	0.644231	0.666667	0.644231
+5	No log	0.737127	0.766667	0.757751	0.766667	0.757751
+6	No log	1.238032	0.666667	0.644231	0.666667	0.644231
+7	No log	0.951186	0.733333	0.724417	0.733333	0.724417
+8	No log	1.181062	0.733333	0.725427	0.733333	0.725427
+9	No log	0.842178	0.766667	0.758677	0.766667	0.758677
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [180/600 00:48 < 01:55, 3.64 it/s, Epoch 6/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.233914	0.700000	0.689177	0.700000	0.689177
+2	No log	0.824400	0.733333	0.725541	0.733333	0.725541
+3	No log	0.917397	0.766667	0.760895	0.766667	0.760895
+4	No log	0.912794	0.833333	0.838721	0.833333	0.838721
+5	No log	0.933130	0.766667	0.760558	0.766667	0.760558
+6	No log	1.094564	0.800000	0.803451	0.800000	0.803451
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [210/600 00:53 < 01:40, 3.90 it/s, Epoch 7/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.197780	0.500000	0.427005	0.500000	0.427005
+2	No log	1.028531	0.633333	0.587163	0.633333	0.587163
+3	No log	0.747713	0.766667	0.718374	0.766667	0.718374
+4	No log	0.983909	0.733333	0.714141	0.733333	0.714141
+5	No log	1.348910	0.666667	0.669649	0.666667	0.669649
+6	No log	1.337282	0.733333	0.729293	0.733333	0.729293
+7	No log	1.484794	0.733333	0.729293	0.733333	0.729293
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [210/600 00:55 < 01:43, 3.77 it/s, Epoch 7/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.351483	0.366667	0.318519	0.366667	0.318519
+2	No log	0.963659	0.666667	0.650794	0.666667	0.650794
+3	No log	0.907657	0.600000	0.596251	0.600000	0.596251
+4	No log	1.021488	0.700000	0.696068	0.700000	0.696068
+5	No log	1.313097	0.700000	0.702564	0.700000	0.702564
+6	No log	1.496303	0.733333	0.737037	0.733333	0.737037
+7	No log	1.615771	0.666667	0.670875	0.666667	0.670875
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [210/600 00:54 < 01:42, 3.81 it/s, Epoch 7/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.317123	0.533333	0.527432	0.533333	0.527432
+2	No log	0.872264	0.633333	0.634330	0.633333	0.634330
+3	No log	0.725659	0.766667	0.734266	0.766667	0.734266
+4	No log	0.912244	0.733333	0.713889	0.733333	0.713889
+5	No log	0.853023	0.800000	0.794697	0.800000	0.794697
+6	No log	1.020403	0.733333	0.750071	0.733333	0.750071
+7	No log	1.202742	0.733333	0.744360	0.733333	0.744360
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [210/600 00:54 < 01:42, 3.81 it/s, Epoch 7/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.319369	0.633333	0.633333	0.633333	0.633333
+2	No log	0.828328	0.733333	0.716667	0.733333	0.716667
+3	No log	0.612778	0.766667	0.752694	0.766667	0.752694
+4	No log	0.671585	0.833333	0.816450	0.833333	0.816450
+5	No log	0.781043	0.800000	0.787879	0.800000	0.787879
+6	No log	1.235227	0.766667	0.762290	0.766667	0.762290
+7	No log	1.128110	0.766667	0.766330	0.766667	0.766330
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [300/600 01:15 < 01:16, 3.94 it/s, Epoch 10/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.179397	0.766667	0.757835	0.766667	0.757835
+2	No log	0.663111	0.800000	0.784632	0.800000	0.784632
+3	No log	0.404249	0.900000	0.894360	0.900000	0.894360
+4	No log	0.371205	0.933333	0.932997	0.933333	0.932997
+5	No log	0.253201	0.933333	0.932660	0.933333	0.932660
+6	No log	0.248029	0.966667	0.966330	0.966667	0.966330
+7	No log	0.301319	0.933333	0.932660	0.933333	0.932660
+8	No log	0.296120	0.933333	0.932660	0.933333	0.932660
+9	No log	0.303265	0.933333	0.932660	0.933333	0.932660
+10	No log	0.310704	0.933333	0.932660	0.933333	0.932660
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [270/600 01:11 < 01:28, 3.73 it/s, Epoch 9/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.566393	0.466667	0.374875	0.466667	0.374875
+2	No log	1.085514	0.666667	0.640867	0.666667	0.640867
+3	No log	0.898433	0.700000	0.629485	0.700000	0.629485
+4	No log	0.913307	0.766667	0.766270	0.766667	0.766270
+5	No log	0.788258	0.800000	0.802778	0.800000	0.802778
+6	No log	1.082586	0.800000	0.802778	0.800000	0.802778
+7	No log	1.180908	0.766667	0.760895	0.766667	0.760895
+8	No log	1.390606	0.766667	0.752165	0.766667	0.752165
+9	No log	1.383796	0.800000	0.794048	0.800000	0.794048
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [240/600 01:01 < 01:32, 3.88 it/s, Epoch 8/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.189167	0.666667	0.608081	0.666667	0.608081
+2	No log	0.709174	0.800000	0.784632	0.800000	0.784632
+3	No log	0.573586	0.866667	0.868519	0.866667	0.868519
+4	No log	0.508065	0.900000	0.899663	0.900000	0.899663
+5	No log	0.642762	0.833333	0.835774	0.833333	0.835774
+6	No log	0.993306	0.733333	0.712413	0.733333	0.712413
+7	No log	1.089381	0.766667	0.760642	0.766667	0.760642
+8	No log	0.786987	0.800000	0.804079	0.800000	0.804079
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [390/600 01:38 < 00:53, 3.96 it/s, Epoch 13/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.289757	0.633333	0.582372	0.633333	0.582372
+2	No log	0.908802	0.700000	0.688552	0.700000	0.688552
+3	No log	0.698594	0.800000	0.792989	0.800000	0.792989
+4	No log	0.621238	0.766667	0.762879	0.766667	0.762879
+5	No log	0.615152	0.833333	0.831987	0.833333	0.831987
+6	No log	0.646084	0.833333	0.831481	0.833333	0.831481
+7	No log	0.619138	0.866667	0.861111	0.866667	0.861111
+8	No log	0.592180	0.866667	0.861111	0.866667	0.861111
+9	No log	0.578865	0.866667	0.861111	0.866667	0.861111
+10	No log	0.755574	0.800000	0.794444	0.800000	0.794444
+11	No log	0.594706	0.866667	0.861111	0.866667	0.861111
+12	No log	0.693364	0.833333	0.829545	0.833333	0.829545
+13	No log	0.681729	0.833333	0.829545	0.833333	0.829545
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+ [270/600 01:08 < 01:24, 3.90 it/s, Epoch 9/20]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	1.428420	0.466667	0.422559	0.466667	0.422559
+2	No log	1.103904	0.600000	0.591991	0.600000	0.591991
+3	No log	0.728791	0.800000	0.797727	0.800000	0.797727
+4	No log	0.767658	0.766667	0.772138	0.766667	0.772138
+5	No log	0.619484	0.833333	0.836027	0.833333	0.836027
+6	No log	1.091224	0.766667	0.775712	0.766667	0.775712
+7	No log	0.986678	0.766667	0.763889	0.766667	0.763889
+8	No log	1.307085	0.766667	0.763925	0.766667	0.763925
+9	No log	1.316492	0.800000	0.802778	0.800000	0.802778
+allProbabilities.shape: torch.Size([15, 120, 6])
+
+sumOfProbabilitiesOfAllModels:  torch.Size([120, 6])
+
+maxSumOfProbabilities torch.Size([120]) tensor([1, 0, 3, 4, 4, 4, 4, 5, 0, 0, 2, 0, 2, 5, 0, 4, 0, 0, 4, 1, 3, 2, 2, 4,
+        2, 4, 0, 0, 0, 1, 5, 0, 2, 4, 5, 5, 5, 2, 0, 0, 1, 2, 0, 4, 1, 0, 4, 0,
+        1, 0, 0, 4, 0, 1, 0, 2, 0, 0, 0, 0, 0, 5, 2, 0, 0, 4, 0, 0, 4, 3, 3, 0,
+        0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 3, 0, 2, 2, 5, 0, 5, 0, 0, 0, 2, 0, 4, 1,
+        4, 4, 5, 2, 5, 3, 0, 1, 1, 3, 0, 0, 5, 3, 5, 1, 1, 0, 0, 0, 2, 0, 0, 1])
+
+Mismatches between expected and maxSumOfProbabilities: 38
+
+majorityVoting torch.Size([15, 120])
+
+majorityVoting torch.Size([120]) tensor([1, 0, 3, 4, 4, 4, 4, 5, 0, 0, 2, 0, 2, 5, 0, 4, 0, 0, 4, 1, 4, 2, 2, 4,
+        2, 4, 0, 0, 0, 1, 5, 0, 2, 3, 5, 5, 5, 2, 0, 0, 1, 2, 0, 4, 1, 0, 4, 0,
+        1, 0, 0, 4, 0, 1, 5, 2, 0, 0, 0, 0, 4, 5, 2, 0, 0, 4, 0, 0, 4, 3, 3, 0,
+        0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 1, 0, 2, 2, 5, 0, 5, 0, 0, 0, 2, 0, 4, 1,
+        4, 0, 5, 2, 5, 3, 0, 0, 0, 3, 0, 0, 5, 3, 5, 1, 1, 0, 0, 0, 2, 0, 0, 1])
+
+Mismatches between expected and majorityVoting: 40
+
+Mismatches between maxSumOfProbabilities and majorityVoting: 8
+
+Expected: torch.Size([120]) tensor([4, 0, 3, 0, 0, 4, 0, 5, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 2, 0,
+        1, 4, 0, 0, 0, 1, 5, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2, 0, 0, 0,
+        1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 5, 2, 0, 0, 4, 4, 0, 5, 3, 3, 0,
+        0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 1, 0, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 5, 5, 3, 0, 1, 1, 3, 0, 0, 5, 0, 5, 1, 1, 0, 0, 0, 1, 0, 1, 1])
+
+Diff at: maxSumOfProbabilities vs. expected: [('Troubleshooting', 'Advice'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Code', 'Troubleshooting'), ('Code', 'Discovery'), ('Off-topic', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Comparison', 'Discovery'), ('Code', 'Troubleshooting'), ('Advice', 'Discovery'), ('Code', 'Troubleshooting'), ('Advice', 'Discovery'), ('Off-topic', 'Discovery'), ('Off-topic', 'Discovery'), ('Off-topic', 'Discovery'), ('Code', 'Discovery'), ('Troubleshooting', 'Discovery'), ('Code', 'Troubleshooting'), ('Troubleshooting', 'Code'), ('Advice', 'Discovery'), ('Advice', 'Troubleshooting'), ('Code', 'Troubleshooting'), ('Discovery', 'Advice'), ('Advice', 'Off-topic'), ('Comparison', 'Troubleshooting'), ('Off-topic', 'Troubleshooting'), ('Off-topic', 'Discovery'), ('Code', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Off-topic', 'Discovery'), ('Code', 'Off-topic'), ('Comparison', 'Discovery'), ('Code', 'Troubleshooting'), ('Discovery', 'Troubleshooting')]
+
+Diff at: majorityVoting vs. expected: [('Troubleshooting', 'Advice'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Code', 'Troubleshooting'), ('Code', 'Discovery'), ('Off-topic', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Code', 'Troubleshooting'), ('Advice', 'Discovery'), ('Code', 'Troubleshooting'), ('Comparison', 'Discovery'), ('Off-topic', 'Discovery'), ('Off-topic', 'Discovery'), ('Off-topic', 'Discovery'), ('Code', 'Discovery'), ('Troubleshooting', 'Discovery'), ('Code', 'Troubleshooting'), ('Troubleshooting', 'Code'), ('Advice', 'Discovery'), ('Advice', 'Troubleshooting'), ('Off-topic', 'Discovery'), ('Code', 'Troubleshooting'), ('Advice', 'Discovery'), ('Discovery', 'Advice'), ('Advice', 'Off-topic'), ('Off-topic', 'Troubleshooting'), ('Off-topic', 'Discovery'), ('Code', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Off-topic', 'Discovery'), ('Code', 'Off-topic'), ('Discovery', 'Troubleshooting'), ('Discovery', 'Troubleshooting'), ('Comparison', 'Discovery'), ('Code', 'Troubleshooting'), ('Discovery', 'Troubleshooting')]
+
+Diff at: majorityVot vs. maxSumOfProbabilities: [('Advice', 'Comparison'), ('Comparison', 'Advice'), ('Off-topic', 'Discovery'), ('Advice', 'Discovery'), ('Troubleshooting', 'Comparison'), ('Discovery', 'Advice'), ('Discovery', 'Troubleshooting'), ('Discovery', 'Troubleshooting')]
+
+Mispredicted categories as tuples (predicted, expected) in validation set: [('Troubleshooting', 'Advice'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Code', 'Troubleshooting'), ('Code', 'Discovery'), ('Off-topic', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Comparison', 'Discovery'), ('Code', 'Troubleshooting'), ('Advice', 'Discovery'), ('Code', 'Troubleshooting'), ('Advice', 'Discovery'), ('Off-topic', 'Discovery'), ('Off-topic', 'Discovery'), ('Off-topic', 'Discovery'), ('Code', 'Discovery'), ('Troubleshooting', 'Discovery'), ('Code', 'Troubleshooting'), ('Troubleshooting', 'Code'), ('Advice', 'Discovery'), ('Advice', 'Troubleshooting'), ('Code', 'Troubleshooting'), ('Discovery', 'Advice'), ('Advice', 'Off-topic'), ('Comparison', 'Troubleshooting'), ('Off-topic', 'Troubleshooting'), ('Off-topic', 'Discovery'), ('Code', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Advice', 'Discovery'), ('Off-topic', 'Discovery'), ('Code', 'Off-topic'), ('Comparison', 'Discovery'), ('Code', 'Troubleshooting'), ('Discovery', 'Troubleshooting')]
+
+Category based accuracy in validation set: {'Advice': 0.6666666666666667, 'Discovery': 0.6891891891891893, 'Comparison': 1.0, 'Off-topic': 0.7777777777777778, 'Troubleshooting': 0.5, 'Code': 0.8333333333333334}
+
+Categories count in the validation set: {'Advice': 6, 'Discovery': 74, 'Comparison': 5, 'Off-topic': 9, 'Troubleshooting': 20, 'Code': 6}
+
+Overall accuracy: 0.6833333333333333
