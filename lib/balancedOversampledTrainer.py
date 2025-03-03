@@ -13,7 +13,6 @@ class BalancedOversampledTrainer(Trainer):
         weights = 1. / categoryCounts.float()
         sampleWeights = weights[self.y]
         sampler = torch.utils.data.WeightedRandomSampler(sampleWeights, len(sampleWeights))
-        dataset = torch.utils.data.TensorDataset(self.x, self.y)
         return DataLoader(self.train_dataset, batch_size=8, sampler=sampler)
 
     def get_train_dataloader(self):
