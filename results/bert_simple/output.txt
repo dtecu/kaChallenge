@@ -1,0 +1,31 @@
+Length of all data in data set: 1185
+Size of categories in the data set: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 7}
+There are 83 unlabelled items
+Figuring out why ...
+['Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic', 'Off-Topic']
+OK the reason is the inconsistency: 'Off-Topic' vs 'Off-topic'
+Agreeing to turn all of 'Off-Topic' into 'Off-topic' and then check again that the data is clean
+Confirm that data is consistent
+Length of all data in data set: 1185
+Size of categories in the data set: {'Discovery': 734, 'Troubleshooting': 199, 'Code': 59, 'Comparison': 50, 'Advice': 53, 'Off-topic': 90}
+Data is OK now
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.11/dist-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/content/dantecu/lib/questionsDataset.py:12: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  item = {key: torch.tensor(val[idx]) for key, val in self.tokens.items()}
+ [ 720/3600 02:22 < 09:33, 5.02 it/s, Epoch 6/30]
+Epoch	Training Loss	Validation Loss	Accuracy	F1macro	F1micro	F1weighed
+1	No log	0.463779	0.850467	0.694037	0.850467	0.848820
+2	No log	0.332335	0.915888	0.841530	0.915888	0.921263
+3	No log	0.350338	0.915888	0.803850	0.915888	0.908284
+4	No log	0.528600	0.897196	0.798471	0.897196	0.896510
+5	0.424700	0.569124	0.906542	0.824642	0.906542	0.909968
+6	0.424700	0.552867	0.906542	0.824905	0.906542	0.906428
+
+Train results: {'eval_loss': 0.19453047215938568, 'eval_Accuracy': 0.9478623566214807, 'eval_F1Macro': 0.892573035509279, 'eval_F1Micro': 0.9478623566214807, 'eval_F1Weighed': 0.9458683606578526, 'eval_runtime': 6.2211, 'eval_samples_per_second': 154.152, 'eval_steps_per_second': 19.289, 'epoch': 6.0}
+
+Test results: {'eval_loss': 0.3323349058628082, 'eval_Accuracy': 0.9158878504672897, 'eval_F1Macro': 0.8415298469646296, 'eval_F1Micro': 0.9158878504672897, 'eval_F1Weighed': 0.9212633161231292, 'eval_runtime': 0.7158, 'eval_samples_per_second': 149.477, 'eval_steps_per_second': 19.558, 'epoch': 6.0}
+
+Final, validation results: {'test_loss': 0.5938358306884766, 'test_Accuracy': 0.8319327731092437, 'test_F1Macro': 0.7199697038063623, 'test_F1Micro': 0.8319327731092437, 'test_F1Weighed': 0.8324127562521447, 'test_runtime': 0.7809, 'test_samples_per_second': 152.383, 'test_steps_per_second': 19.208}
