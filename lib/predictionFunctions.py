@@ -3,6 +3,7 @@ import torch.nn.functional as F
 
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
+from collections import Counter
 
 def predict(clasifier, tokens, categories):
     with torch.no_grad():
@@ -22,6 +23,14 @@ def getMispredictedCategories(prediction, trueValue, categories):
     groundTruth = [categories[i] for i in getMispredictedClasses(trueValue, prediction).tolist()]
     return [(w, g) for w, g in zip(wrong, groundTruth)]
 
+def getCategoryBasedAccuracy(prediction, trueValue, categories):
+    mispredistedCategories = getMispredictedCategories(predictions, trueValue, categories)
+    countMispredictedCategories = dict(Counter([item for (_, item) in mispredistedCategories]))
+    countTotalCategories = dict(Counter([categories[item] for item in trueValue.tolist()]))
+    missingItems = {item:0 for item in set(countTotalCategories.keys()).difference(set(countMispredictedCategories.keys()))}
+    countMispredictedCategories = {**countMispredictedCategories, **missingItems}
+    return {cat:(1 - (countMispredictedCategories[cat]/countTotalCategories[cat])) for cat in countTotalCategories.keys()}
+    
 def getMetrics(probsLabelsTuple):
     predictedProbabilities, expected = probsLabelsTuple
     predictions = predictedProbabilities.argmax(axis=-1)
